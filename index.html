@@ -117,6 +117,22 @@
     <h1>Alpha Vantage Stock Data</h1>
     <div id="dataContainer" class="data-container"></div>
     <script src="app.js"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+          const cards = document.querySelectorAll('.card');
+  
+          cards.forEach(card => {
+              card.addEventListener('mouseenter', function () {
+                  cards.forEach(c => c.classList.remove('active'));
+                  this.classList.add('active');
+              });
+  
+              card.addEventListener('mouseleave', function () {
+                  this.classList.remove('active');
+              });
+          });
+      });
+  </script>
   </div>
   </body>
 </html>
